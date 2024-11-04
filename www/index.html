@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Farhan Dwi H.</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="https://storage.googleapis.com/web-profile-farhan-ganteng/favicon.png"
+      type="image/x-icon"
+    />
     <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap"
@@ -50,7 +54,10 @@
 
           <aside class="home-sidebar">
             <div class="image-container">
-              <img src="assets/images/home-image.png" alt="Farhan Dwi H." />
+              <img
+                src="https://storage.googleapis.com/web-profile-farhan-ganteng/home-image.png"
+                alt="Farhan Dwi H."
+              />
             </div>
             <div class="social-icons">
               <ul>
@@ -93,7 +100,7 @@
       <section id="ABOUT">
         <div class="about-container">
           <img
-            src="assets/images/about-image.png"
+            src="https://storage.googleapis.com/web-profile-farhan-ganteng/about-image.png"
             alt="about-image"
             class="about-image"
           />
@@ -146,7 +153,10 @@
         <h2>Recent Certifications</h2>
         <div class="certification-grid">
           <div class="certification">
-            <img src="assets/images/fcc.png" alt="FreeCodeCamp Logo" />
+            <img
+              src="https://storage.googleapis.com/web-profile-farhan-ganteng/fcc.png"
+              alt="FreeCodeCamp Logo"
+            />
             <a
               href="https://www.freecodecamp.org/certification/Farhandwi/back-end-development-and-apis"
               target="_blank"
@@ -156,7 +166,10 @@
             <p>freeCodeCamp</p>
           </div>
           <div class="certification">
-            <img src="assets/images/dicoding.png" alt="Dicoding Logo" />
+            <img
+              src="https://storage.googleapis.com/web-profile-farhan-ganteng/dicoding.png"
+              alt="Dicoding Logo"
+            />
             <a
               href="https://www.dicoding.com/certificates/QLZ9R905EP5D"
               target="_blank"
@@ -166,7 +179,10 @@
             <p>dicoding</p>
           </div>
           <div class="certification">
-            <img src="assets/images/dicoding.png" alt="Dicoding Logo" />
+            <img
+              src="https://storage.googleapis.com/web-profile-farhan-ganteng/dicoding.png"
+              alt="Dicoding Logo"
+            />
             <a
               href="https://www.dicoding.com/certificates/1RXY02079ZVM"
               target="_blank"
@@ -176,7 +192,10 @@
             <p>dicoding</p>
           </div>
           <div class="certification">
-            <img src="assets/images/oracle.png" alt="Oracle Logo" />
+            <img
+              src="https://storage.googleapis.com/web-profile-farhan-ganteng/oracle.png"
+              alt="Oracle Logo"
+            />
             <a
               href="https://drive.google.com/file/d/1ZKGcKWkMfiX7Unkcv5LsQ4SM5BGYBNV6/view?usp=sharing"
               target="_blank"
@@ -191,7 +210,27 @@
     <footer>
       <p>&copy; 2024 Farhan Dwi Hartanto. All Rights Reserved.</p>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script>
+      // adjust width kotak tipis on scroll
+      window.addEventListener('scroll', function () {
+        const elements = document.querySelectorAll('.kotak-tipis');
+        const windowCenter = window.scrollY + window.innerHeight / 2;
+
+        elements.forEach((element) => {
+          const elementTop = element.offsetTop;
+          const elementHeight = element.offsetHeight;
+          const elementCenter = elementTop + elementHeight / 2;
+
+          const distance = Math.abs(windowCenter - elementCenter);
+
+          let newWidth = 100 - (distance / window.innerHeight) * 100;
+          if (newWidth < 30) newWidth = 30;
+          if (newWidth > 100) newWidth = 100;
+
+          element.style.width = newWidth + '%';
+        });
+      });
+    </script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
